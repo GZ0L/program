@@ -1,0 +1,46 @@
+﻿<Window x:Class="MyPortfolio.EnglishWords.AddDictionaryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyPortfolio.EnglishWords"
+        mc:Ignorable="d"
+        Title="NewDictionary" Height="250" Width="450" ResizeMode="NoResize" FontFamily="Tahoma" WindowStartupLocation="CenterScreen" Icon="/MyPortfolio;component/Resources/icon/icon_EnglishWords_v2.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1"
+               Grid.Row="1"
+               Margin="10,10"
+               Content="Enter names for the dictionary" 
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center"/>
+        <TextBox Name="Txt_Box"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Margin="10,10"
+                 Padding="10,10"
+                 BorderBrush="Silver" 
+                 HorizontalContentAlignment="Center" 
+                 VerticalContentAlignment="Center"/>
+
+        <Button Name="Btn_Save"
+                Click="Btn_Save_Click"
+                Grid.Column="1"
+                Grid.Row="3"
+                Margin="10,10"
+                Background="White"
+                Content="Save the word"/>
+    </Grid>
+</Window>

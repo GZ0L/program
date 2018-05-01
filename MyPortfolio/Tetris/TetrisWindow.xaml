@@ -1,0 +1,72 @@
+﻿<Window x:Class="MyPortfolio.Tetris.TetrisWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyPortfolio.Tetris"
+        mc:Ignorable="d"
+        Title="Tetris" Initialized="Window_Initialized" Height="700" Width="530" Background="Silver" KeyDown="Window_KeyDown" FontFamily="Tahoma" FontSize="14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+
+    <DockPanel LastChildFill="True" Margin="10,0,10,10">
+        <Canvas DockPanel.Dock="Top" Height="40">
+            <Image Source="/MyPortfolio;component/Resources/icon/icon_Tetris_v2.png" Height="20" Margin="5"/>
+            <Button Name="Btn_Close" Click="Btn_Close_Click" Content="X" Canvas.Right="0" Margin="5" Height="20" Width="20" Padding="0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"/>
+            <Button Name="Btn_Min" Click="Btn_Min_Click" Content="_" Canvas.Right="30" Margin="5" Height="20" Width="20" Padding="0" FontSize="15" Background="{x:Null}" BorderBrush="{x:Null}"  Cursor="Hand"/>
+        </Canvas>
+
+        <Border DockPanel.Dock="Right" BorderThickness="1" BorderBrush="Gray">
+            <StackPanel Width="150" HorizontalAlignment="Right">
+                <Label Name="Lbl_Score"  Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <Label Name="Lbl_Lines" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+
+                <Label  Name="Lbl" Margin="5,100,5,0" Content="Speed Up"/>
+                <ProgressBar Name="speedUp"  Height="20" Margin="5,0,5,5" Background="{x:Null}" BorderThickness="1" BorderBrush="Gray" Foreground="AliceBlue" Maximum="60" SmallChange="1" Opacity="0.5"/>
+
+                <Image Margin="5,200,5,5" Source="/MyPortfolio;component/Resources/icon/Tetris_Manual.png"/>
+
+            </StackPanel>
+        </Border>
+
+        <Border BorderThickness="1" BorderBrush="Gray">
+            <Grid Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

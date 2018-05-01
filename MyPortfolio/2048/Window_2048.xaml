@@ -1,0 +1,95 @@
+﻿<Window x:Class="MyPortfolio._2048.Window_2048"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyPortfolio._2048"
+        mc:Ignorable="d"
+        Title="2048" KeyDown="Window_2048_KeyDown" Height="600" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" BorderThickness="1" WindowStartupLocation="CenterScreen" Background="#F8F8FF" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="Lbl_Base">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Label" x:Key="Lbl_2048">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#1E90FF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+
+    </Window.Resources>
+
+    <Grid Background="Silver">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <!--Меню-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Width="110" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
+                <!--кнопка выxод-->
+                <Button Name="Exit" Click="Exit_Click" Content="X" Background="White" BorderThickness="1" FontSize="15" Margin="5" Width="25" Height="25"  />
+                <!--кнопка свернуть-->
+                <Button Name="Btn_Min" Click="Btn_Min_Click" Content="_"  Background="White" BorderThickness="1" FontSize="15" Width="25" Height="25" VerticalContentAlignment="Center"  />
+            </StackPanel>
+            <!--кнопка new game-->
+            <Button Name="Btn_NewGame" Click="Btn_NewGame_Click" Grid.Row="1" Margin="5,20,5,20" Content="New Game" FontSize="25" Background="White"/>
+            <!--score-->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="SCORE:" FontSize="20" VerticalContentAlignment="Bottom" Margin="5,20,5,0" BorderThickness="1,1,1,0" BorderBrush="Gray" Background="White"/>
+                <Label Name="Lbl_Score" Content="0" Grid.Row="1" FontSize="20" Margin="5,0,5,20" HorizontalContentAlignment="Right" BorderThickness="1,0,1,1" BorderBrush="Gray" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--Игровое поле-->
+        <Grid Grid.Row="1">
+            <UniformGrid Columns="4" Rows="4">
+                <Label Name="Lbl_1" Content="2" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_2" Content="4" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_3" Content="8" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_4" Content="16" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_5" Content="32" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_6" Content="64" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_7" Content="128" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_8" Content="256" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_9" Content="512" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_10" Content="1024" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_11" Content="2048" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_12" Content="4096" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_13" Content="8192" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_14" Content="16384" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_15" Content="32768" Style="{StaticResource Lbl_Base}"/>
+                <Label Name="Lbl_16" Content="65536" Style="{StaticResource Lbl_Base}"/>
+            </UniformGrid>
+        </Grid>
+
+        <Label Name="EndGame" Grid.Row="1" Background="Orange" Content="GAME OVER" FontSize="50" Foreground="Red" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Opacity="0.9" Visibility="Hidden" />
+    </Grid>
+</Window>
